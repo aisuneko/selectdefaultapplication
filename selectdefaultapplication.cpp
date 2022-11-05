@@ -301,7 +301,11 @@ void SelectDefaultApplication::loadDesktopFile(const QFileInfo &fileInfo)
 			if (key == "Name") {
 				appName = value;
 			} else if (key == "MimeType") {
+				#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
 				mimetypes = value.split(';', Qt::SkipEmptyParts);
+				#else
+				mimetypes = value.split(';', QString::SplitBehavior::SkipEmptyParts);
+				#endif
 			} else if (key == "Icon") {
 				appIcon = value;
 			}
