@@ -18,7 +18,7 @@ jobs:
       - name: install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y qt5-default qtdeclarative5-dev cmake libarchive-tools libarchive13 libarchive-tar-wrapper-perl
+          sudo apt-get install -y qt5-default qtdeclarative5-dev cmake libarchive-tools
       - name: configure
         run: qmake
       - name: build
@@ -28,7 +28,7 @@ jobs:
       - name: copy binary
         run: mv selectdefaultapplication AppDir/usr/bin/
       - name: Build AppImage
-        uses: AppImageCrafters/build-appimage@v1
+        uses: AppImageCrafters/build-appimage@master
         env:
           UPDATE_INFO: gh-releases-zsync|magnus-ISU|selectdefaultapplication|latest|*x86_64.AppImage.zsync
         with:
