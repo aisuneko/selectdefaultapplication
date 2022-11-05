@@ -4,3 +4,4 @@ moc_*
 *.o
 selectdefaultapplication
 AppDir/
+appimage-build/
