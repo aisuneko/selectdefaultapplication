@@ -18,7 +18,7 @@ jobs:
       - name: install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y qt5-default qtdeclarative5-dev cmake
+          sudo apt-get install -y qt5-default qtdeclarative5-dev cmake libarchive-tools
       - name: configure
         run: qmake
       - name: build
